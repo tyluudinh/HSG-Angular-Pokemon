@@ -1,0 +1,20 @@
+.card {
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  display: grid;
+  justify-content: center;
+  box-shadow: 0 6px 16px 0 rgb(0 0 0 / 20%);
+  box-sizing: border-box;
+  &:hover {
+    box-shadow: 0 4px 12px 0 rgb(0 0 0 / 15%);
+    color: var(--primary);
+    text-decoration: none;
+  }
+  img {
+    min-width: 70px;
+  }
+  h4 {
+    font-size: 14px;
+  }
+}

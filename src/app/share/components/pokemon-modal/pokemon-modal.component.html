@@ -1,0 +1,58 @@
+<ng-container *ngIf="(pokemonDetail$ | async).data as pokemon">
+  <div class="modal-body">
+    <div class="card border-0 flex-row flex-wrap">
+      <img class="img-thumbnail" width="200" src="{{pokemon.sprites.front_default}}" alt="">
+      <div class="card-block">
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-borderless w-100">
+              <tr>
+                <td class="text-right font-weight-bold">ID</td>
+                <td>#{{pokemon.id}}</td>
+              </tr>
+              <tr>
+                <td class="text-right font-weight-bold">Name</td>
+                <td>#{{pokemon.name}}</td>
+              </tr>
+              <tr>
+                <td class="text-right font-weight-bold">Height</td>
+                <td>{{pokemon.height}}m</td>
+              </tr>
+              <tr>
+                <td class="text-right font-weight-bold">Weight</td>
+                <td>{{pokemon.weight}}kg</td>
+              </tr>
+              <tr>
+                <td class="text-right font-weight-bold">Ability</td>
+                <td class="d-flex">
+                  <label class="bg-secondary ability text-white ml-2" *ngFor="let ability of pokemon.abilities">
+                    {{ability.ability?.name}}
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-right font-weight-bold">Type</td>
+                <td class="d-flex">
+                  <label class="bg-primary type text-white ml-2" *ngFor="let type of pokemon.types">
+                    {{type.type?.name}}
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-right font-weight-bold">Form</td>
+                <td class="d-flex">
+                  <label class="bg-danger type text-white ml-2" *ngFor="let form of pokemon.forms">
+                    {{form.name}}
+                  </label>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Close</button>
+  </div>
+</ng-container>

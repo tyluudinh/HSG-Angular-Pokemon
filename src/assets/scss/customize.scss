@@ -1,0 +1,19 @@
+$theme-colors: (
+  "primary": #f37934,
+  "second": #1976d2,
+  "danger": #ff4136,
+);
+.col-half-offset {
+  margin-left: 4.166666667%;
+}
+.page-item.active .page-link {
+  border-radius: 50% !important;
+}
+
+.page-item .page-link {
+  margin-left: 10px !important;
+  border-radius: 50% !important;
+  width: 35px !important;
+  display: flex;
+  justify-content: center;
+}

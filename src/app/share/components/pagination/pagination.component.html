@@ -1,0 +1,11 @@
+<pagination
+  [totalItems]="totalItems"
+  [itemsPerPage]="itemsPerPage"
+  [rotate]="false"
+  (pageChanged)="this.pageChange.emit($event)"
+  previousText="&lsaquo;"
+  nextText="&rsaquo;"
+  firstText="&laquo;"
+  lastText="&raquo;"
+  [maxSize]="5">
+</pagination>

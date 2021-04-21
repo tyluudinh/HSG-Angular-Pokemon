@@ -1,0 +1,46 @@
+<div class="mw-100">
+  <carousel [itemsPerSlide]="3"
+            [singleSlideOffset]="true"
+            [startFromIndex]="0"
+            [interval]="false"
+            [isAnimated]="true">
+    <slide *ngFor="let slide of videosCarousel">
+      <iframe [src]="slide" frameborder="0"></iframe>
+    </slide>
+  </carousel>
+  <section id="pokemon">
+    <div class="section-header d-flex align-items-center flex-wrap justify-content-between">
+      <h3>
+        Pókemons
+      </h3>
+      <button class="btn btn-outline-primary btn-sm" routerLink="/pokemon">
+        See more <fa-icon [icon]="icon"></fa-icon>
+      </button>
+    </div>
+    <div class="section-content w-100" *ngIf="(top10Pokemon$ | async)?.data as listPokemon">
+      <div class="row mb-3" *ngFor="let iRow of [0,1]">
+        <ng-container *ngFor="let i of [0,1,2,3,4]">
+          <div class="col-md-2" [class.col-half-offset]="i" *ngIf="listPokemon[5 * iRow + i] as pokemon">
+            <app-resource-card [resource]="pokemon"></app-resource-card>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </section>
+  <section id="items" class="mt-3">
+    <div class="section-header d-flex align-items-center flex-wrap justify-content-between">
+      <h3>
+        Items
+      </h3>
+    </div>
+    <div class="section-content w-100" *ngIf="(top10Item$ | async)?.data as listItem">
+      <div class="row mb-3" *ngFor="let iRow of [0,1]">
+        <ng-container *ngFor="let i of [0,1,2,3,4]">
+          <div class="col-md-2" [class.col-half-offset]="i" *ngIf="listItem[5 * iRow + i] as item">
+            <app-resource-card [resource]="item"></app-resource-card>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </section>
+</div>

@@ -7,6 +7,7 @@ import {Observable} from 'rxjs';
 import {IPokemon} from '../../share/models/pokemon.model';
 import {IItem} from '../../share/models/item.model';
 import {HomePageActions} from '../../store/actions/homepage.action';
+import {PokemonActions} from '../../store/actions/pokemon.action';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -34,6 +35,13 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.storeRepository.dispatch(HomePageActions.top10Items.load());
     this.storeRepository.dispatch(HomePageActions.top10Pokemon.load());
+  }
+  onClickPokemon(pokemon: IPokemon): void {
+    this.storeRepository.dispatch(PokemonActions.showModal({
+      payload: {
+        id: pokemon.id
+      }
+    }));
   }
 
 }

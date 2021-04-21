@@ -21,7 +21,7 @@
       <div class="row mb-3" *ngFor="let iRow of [0,1]">
         <ng-container *ngFor="let i of [0,1,2,3,4]">
           <div class="col-md-2" [class.col-half-offset]="i" *ngIf="listPokemon[5 * iRow + i] as pokemon">
-            <app-resource-card [resource]="pokemon"></app-resource-card>
+            <app-resource-card (onClick)="onClickPokemon($event)" [resource]="pokemon"></app-resource-card>
           </div>
         </ng-container>
       </div>

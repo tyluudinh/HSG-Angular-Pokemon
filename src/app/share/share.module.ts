@@ -5,17 +5,25 @@ import { ResourceCardComponent } from './components/resource-card/resource-card.
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { PokemonModalComponent } from './components/pokemon-modal/pokemon-modal.component';
+import {ModalModule} from 'ngx-bootstrap/modal';
+import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [PokemonCardComponent, ResourceCardComponent, PaginationComponent, PokemonModalComponent],
   imports: [
     CommonModule,
-    PaginationModule.forRoot()
+    PaginationModule.forRoot(),
+    ModalModule.forRoot(),
+    BsDropdownModule.forRoot()
   ],
   exports: [
     PokemonCardComponent,
     ResourceCardComponent,
     PaginationComponent,
+    ModalModule,
+    BsDropdownModule,
+    FontAwesomeModule
   ],
   entryComponents: [
     PokemonModalComponent

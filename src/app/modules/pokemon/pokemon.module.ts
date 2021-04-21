@@ -5,8 +5,6 @@ import { PokemonListComponent } from './pages/pokemon-list/pokemon-list.componen
 import {ShareModule} from '../../share/share.module';
 import {EffectsModule} from '@ngrx/effects';
 import {PokemonEffect} from '../../store/effects/pokemon.effect';
-import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
-import {ModalModule} from 'ngx-bootstrap/modal';
 
 const routes: Routes = [
   {
@@ -24,8 +22,6 @@ const routes: Routes = [
       PokemonEffect
     ]),
     ShareModule,
-    BsDropdownModule,
-    ModalModule.forRoot()
   ]
 })
 export class PokemonModule { }

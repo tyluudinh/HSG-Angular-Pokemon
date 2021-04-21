@@ -5,9 +5,9 @@ import {RouterModule, Routes} from '@angular/router';
 // RECOMMENDED
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import {ShareModule} from '../../share/share.module';
-import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {EffectsModule} from '@ngrx/effects';
 import {HomepageEffect} from '../../store/effects/homepage.effect';
+import {PokemonEffect} from '../../store/effects/pokemon.effect';
 const routes: Routes = [
   {
     path: '',
@@ -23,9 +23,9 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     CarouselModule.forRoot(),
     ShareModule,
-    FontAwesomeModule,
     EffectsModule.forFeature([
       HomepageEffect,
+      PokemonEffect
     ])
   ]
 })

@@ -7,12 +7,16 @@ import {RouterModule} from '@angular/router';
 import {EffectsModule} from '@ngrx/effects';
 import {HomepageEffect} from '../store/effects/homepage.effect';
 import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
+import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {ShareModule} from '../share/share.module';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    LayoutComponent
+    LayoutComponent,
+    ScrollToTopComponent
   ],
   imports: [
     CommonModule,
@@ -20,10 +24,11 @@ import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
     BsDropdownModule.forRoot(),
     EffectsModule.forFeature([
       HomepageEffect,
-    ])
+    ]),
+    ShareModule
   ],
   exports: [
-    LayoutComponent
+    LayoutComponent,
   ]
 })
 export class LayoutModule { }

@@ -13,7 +13,7 @@ export interface PokemonState {
 }
 export const initialState: PokemonState = {
   list: initApiResultState([]),
-  detail: initApiResultState({}),
+  detail: initApiResultState(null),
 };
 const pokemonReducer = createReducer(
   initialState,
